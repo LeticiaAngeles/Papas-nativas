@@ -143,6 +143,12 @@ body {
     text-align: center;
     color: #333;
 }
+#infor {
+    font-size: 15px;
+    color: #818181;
+    display:flex;
+    flex-wrap: wrap;
+}
 /* Diapositivas */
 .slide {
     display: none;
@@ -253,6 +259,7 @@ input[type="text"] {
     border-radius: var(--border-radius);
     box-sizing: border-box;
     font-size: 16px;
+    font-family: "Poppins";
 }
 
 /* Popup */
