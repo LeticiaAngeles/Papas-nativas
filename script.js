@@ -141,6 +141,41 @@ function checkQuestion5() {
     currentSlide++; // Avanza al slide de datos interesantes
     showSlide(currentSlide);
 }
+// Función para mostrar el puntaje final
+function showFinalScore() {
+    document.getElementById('final-score').innerText = `Tu puntaje final es ${score} de ${totalQuestions}.`;
+    // Puedes ocultar el botón de avanzar si ya no hay más preguntas
+    document.getElementById('next-button').style.display = 'none'; 
+}
+
+// Función para verificar la respuesta de la Pregunta 5
+function checkQuestion5() {
+    const answer = document.querySelector('input[name="q5"]:checked');
+    if (!answer) {
+        showPopup('Por favor, selecciona una respuesta.');
+        return;
+    }
+    if (answer.value === 'b') {
+        showPopup('¡Correcto!');
+        score++;
+    } else {
+        showPopup('Incorrecto. La respuesta correcta es: b) son una parte importante de la identidad y tradiciones peruanas.');
+    }
+    currentSlide++; // Avanza al slide de resultados finales
+    showSlide(currentSlide);
+    showFinalScore(); // Muestra el puntaje final
+}
+
+// Función para reiniciar la lección
+function restartLesson() {
+    currentSlide = 0;
+    score = 0;
+    showSlide(currentSlide);
+    document.getElementById('final-score').innerText = ''; // Borra el puntaje final
+    progress.style.width = '0%';
+    document.getElementById('next-button').style.display = 'inline'; // Muestra el botón de avanzar
+}
+
 
 // Función para enviar las respuestas y mostrar el puntaje final
 const totalQuestions = 5; // Número exacto de preguntas
