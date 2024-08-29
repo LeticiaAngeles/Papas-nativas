@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lección Interactiva: Papas Nativas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Lección Interactiva: Papas Nativas</h1>
+        <div id="progress-bar">
+            <div id="progress"></div>
+        </div>
+        <div id="lesson-content">
+            <!-- Slide de Introducción -->
+            <div class="slide active" id="slide-intro">
+                <h2>Bienvenido</h2>
+                <p>Por favor, ingresa tu nombre:</p>
+                <input type="text" id="user-name" placeholder="Tu nombre aquí">
+                <label for="grado" id="label">Sección: </label>
+                <br>
+                <br>
+                <select class="grado">
+                    <option>5to B</option>
+                    <option>5to A</option>
+                </select>
+                <i></i>
+                <button class="next-btn" onclick="startLesson()">Comenzar Lección</button>
+            </div>
+
+            <!-- Slide 1: Información Educativa -->
+            <div class="slide" id="slide-info">
+                <h2>Aprende sobre las Papas Nativas</h2>
+                <p>Las papas nativas peruanas son una parte muy especial de nuestra cultura y tradición.</p>
+                <img src="recursos/000589544W(1).jpg" alt="Papas Nativas" class="interactive-img" onclick="showPopup('En Perú, hay más de 3,000 tipos diferentes de papas, cada una con su propio sabor y características.')">
+                <button class="next-btn" onclick="nextSlide()">Siguiente</button>
+            </div>
+
+            <!-- Slide 2: Pregunta 1 -->
+            <div class="slide" id="slide-2">
+                <h2>Pregunta 1</h2>
+                <p>Las papas nativas peruanas son únicas porque __________.</p>
+                <div class="question">
+                    <label><input type="radio" name="q1" value="a"> a) se cultivan solo en grandes cantidades en otros países.</label><br><br>
+                    <label><input type="radio" name="q1" value="b"> b) tienen diferentes colores, formas y sabores que las hacen especiales.</label><br><br>
+                    <label><input type="radio" name="q1" value="c"> c) se encuentran en una sola variedad y son todas iguales.</label><br><br>
+                    <label><input type="radio" name="q1" value="d"> d) se usan únicamente para hacer papas fritas.</label><br>
+                </div>
+                <button class="next-btn" onclick="checkQuestion1()">Enviar Respuesta</button>
+            </div>
+
+            <!-- Slide 3: Datos Interesantes 1 -->
+            <div class="slide" id="slide-data-1">
+                <h2>Dato Interesante</h2>
+                <p>Las papas nativas peruanas pueden ser de colores que van desde el blanco hasta el rojo, morado y amarillo. Cada variedad tiene un sabor y una textura diferente, lo que las hace ideales para muchos tipos de platos.</p>
+                <img src="recursos/000589544W(2).jpg" alt="Dato 1" class="interactive-img" onclick="showPopup('Las papas nativas también tienen propiedades antioxidantes que son buenas para la salud.')">
+                <button class="next-btn" onclick="nextSlide()">Siguiente</button>
+            </div>
+
+            <!-- Slide 4: Pregunta 2 -->
+            <div class="slide" id="slide-4">
+                <h2>Pregunta 2</h2>
+                <p>Una de las razones para valorar las papas nativas es que __________.</p>
+                <div class="question">
+                    <label><input type="radio" name="q2" value="a"> a) son baratas y se pueden comprar en cualquier tienda.</label><br><br>
+                    <label><input type="radio" name="q2" value="b"> b) tienen muchas vitaminas y minerales que ayudan a mantenernos saludables.</label><br><br>
+                    <label><input type="radio" name="q2" value="c"> c) solo se cultivan en lugares muy fríos y no pueden crecer en Perú.</label><br><br>
+                    <label><input type="radio" name="q2" value="d"> d) no tienen sabor y se usan solo para hacer puré.</label>
+                </div>
+                <button class="next-btn" onclick="checkQuestion2()">Enviar Respuesta</button>
+            </div>
+
+            <!-- Slide 5: Datos Interesantes 2 -->
+            <div class="slide" id="slide-data-2">
+                <h2>En el tiempo...</h2>
+                <p>Las papas nativas han sido cultivadas en Perú por más de 7,000 años, un legado que comenzó con antiguas civilizaciones como los Incas, quienes las consideraban un alimento sagrado. Estas papas no solo fueron fundamentales para la supervivencia en los difíciles climas andinos... </p>
+                <img src="recursos/000589544W.jpg" alt="Dato 2" class="interactive-img" onclick="showPopup('Sino que también jugaron un papel central en los rituales y tradiciones de estas culturas.')">
+                <button class="next-btn" onclick="nextSlide()">Siguiente</button>
+            </div>
+
+            <!-- Slide 6: Pregunta 3 -->
+            <div class="slide" id="slide-6">
+                <h2>Pregunta 3</h2>
+                <p>Las papas nativas han sido cultivadas en Perú por __________.</p>
+                <div class="question">
+                    <label><input type="radio" name="q3" value="a"> a) solo unos pocos años.</label><br><br>
+                    <label><input type="radio" name="q3" value="b"> b) menos de 100 años.</label><br><br>
+                    <label><input type="radio" name="q3" value="c"> c) miles de años, siendo parte de nuestra historia y cultura.</label><br><br>
+                    <label><input type="radio" name="q3" value="d"> d) solamente las últimas décadas.</label>
+                </div>
+                <button class="next-btn" onclick="checkQuestion3()">Enviar Respuesta</button>
+            </div>
+
+            <!-- Slide 7: Datos Interesantes 3 -->
+            <div class="slide" id="slide-data-3">
+                <h2>¿Por qué es importante?</h2>
+                <p>Al conocer y apreciar las papas nativas peruanas, estamos valorando un tesoro agrícola que no solo alimenta a nuestras comunidades, sino que también preserva la biodiversidad y las tradiciones culturales del país.</p>
+                <img src="recursos/produccion-nacional-de-papa-alcanzo-los-5-7-millones-de-tone-28049 (1).jpg" alt="Dato 3" class="interactive-img" onclick="showPopup('Al consumir y promover estas variedades, apoyamos a los agricultores locales que han mantenido vivas estas especies a lo largo de generaciones. ')">
+                <button class="next-btn" onclick="nextSlide()">Siguiente</button>
+            </div>
+
+            <!-- Slide 8: Pregunta 4 -->
+            <div class="slide" id="slide-8">
+                <h2>Pregunta 4</h2>
+                <p>Al conocer y apreciar las papas nativas peruanas, estamos __________.</p>
+                <div class="question">
+                    <label><input type="radio" name="q4" value="a"> a) ayudando a destruir el medio ambiente.</label><br><br>
+                    <label><input type="radio" name="q4" value="b"> b) apoyando a los agricultores locales y conservando nuestra herencia cultural.</label><br><br>
+                    <label><input type="radio" name="q4" value="c"> c) ignorando la importancia de otras verduras.</label><br><br>
+                    <label><input type="radio" name="q4" value="d"> d) eliminando la necesidad de nuevas variedades de papas.</label>
+                </div>
+                <button class="next-btn" onclick="checkQuestion4()">Enviar Respuesta</button>
+            </div>
+
+            <!-- Slide 9: Datos Interesantes 4 -->
+            <div class="slide" id="slide-data-4">
+                <h2>Asimismo,</h2>
+                <p>Las papas nativas tienen un valor especial porque son una expresión viva de la identidad y tradiciones peruanas, representando siglos de conocimiento agrícola transmitido por las comunidades andinas. </p>
+                <img src="recursos/Captura de pantalla 2024-08-29 015202.png" alt="Dato 4" class="interactive-img" onclick="showPopup('Cada variedad cuenta una historia de adaptación a distintos microclimas y suelos, lo que las convierte en un símbolo de la rica biodiversidad del país. ')">
+                <button class="next-btn" onclick="nextSlide()">Siguiente</button>
+            </div>
+
+            <!-- Slide 10: Pregunta 5 -->
+            <div class="slide" id="slide-10">
+                <h2>Pregunta 5</h2>
+                <p>Las papas nativas tienen un valor especial porque __________.</p>
+                <div class="question">
+                    <label><input type="radio" name="q5" value="a"> a) solo se encuentran en los supermercados internacionales.</label><br><br>
+                    <label><input type="radio" name="q5" value="b"> b) son una parte importante de la identidad y tradiciones peruanas.</label><br><br>
+                    <label><input type="radio" name="q5" value="c"> c) son las mismas que las papas comunes que compramos en cualquier tienda.</label><br><br>
+                    <label><input type="radio" name="q5" value="d"> d) no tienen ningún beneficio para nuestra salud.</label>
+                </div>
+                <button class="next-btn" onclick="checkQuestion5()">Enviar Respuesta</button>
+            </div>
+
+            <!-- Slide 11: Datos Interesantes 5 -->
+            <div class="slide" id="slide-data-5">
+                <h2>Dato Interesante</h2>
+                <p>Aunque en la región del Callao no contamos con papas nativas originarias, es importante reconocer el valor que estas representan para el Perú en su totalidad. </p>
+                <img src="recursos/Captura de pantalla 2024-08-29 015502.png" alt="Dato 5" class="interactive-img" onclick="showPopup('Las papas nativas son un legado de nuestras raíces andinas y un símbolo de la biodiversidad que caracteriza a nuestro país.')">
+                <button class="next-btn" onclick="nextSlide()">Siguiente</button>
+            </div>
+
+            <!-- Slide 12: Final -->
+            <div class="slide" id="slide-final">
+                <h2>¡Felicidades!</h2>
+                <p>Has completado la lección sobre las papas nativas. ¡Bien hecho!</p>
+                <p id="final-score"></p>
+                <button class="submit-btn" onclick="showPopup('Tu respuesta ha sido enviada y registrada en la data')">Enviar Respuestas</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup para resultados -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <p id="popup-message"></p>
+            <button onclick="closePopup()">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

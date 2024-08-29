@@ -1,0 +1,299 @@
+/* Variables */
+:root {
+    --primary-color: #1b07a0;
+    --secondary-color: #2196f3;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --popup-background: rgba(0, 0, 0, 0.7);
+    --popup-content-background: #fff;
+    --border-radius: 10px;
+    --transition-duration: 0.3s;
+}
+.interactive-img {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.interactive-img:hover {
+    transform: scale(1.1);
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+        /* Estilos para interactividad */
+        .interactive-img {
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .interactive-img:hover {
+            transform: scale(1.1);
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .highlight {
+            background-color: #e0f7fa;
+            cursor: pointer;
+            border-bottom: 1px dotted #00796b;
+        }
+
+        .highlight:hover {
+            background-color: #b2ebf2;
+            color:#f1f1f1;
+        }
+
+        .collapsible {
+            cursor: pointer;
+            text-align: left;
+            border: none;
+            outline: none;
+            background-color: #f1f1f1;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .collapsible:hover {
+            background-color: #ddd;
+        }
+
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
+
+        .text-link {
+            color: #00796b;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+/* Estilos Globales */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Barra de Progreso */
+#progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    height: 10px;
+    position: relative;
+}
+
+#progress {
+    height: 100%;
+    background-color: var(--primary-color);
+    width: 0;
+    border-radius: var(--border-radius);
+    transition: width var(--transition-duration) ease;
+}
+#final-score {
+    text-align: center;
+    color: #333;
+}
+/* Diapositivas */
+.slide {
+    display: none;
+    opacity: 0;
+    transition: opacity var(--transition-duration) ease;
+}
+
+.slide.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Encabezados */
+h1, h2 {
+    color: var(--primary-color);
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* Botones */
+button {
+    padding: 14px 28px;
+    border: none;
+    border-radius: var(--border-radius);
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color var(--transition-duration) ease, transform var(--transition-duration) ease;
+    margin: 10px auto;
+    display: block;
+}
+p {
+    font-size: 25px;
+    color: green;
+    text-align: center;
+}
+.grado {
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(214, 255, 153);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    color:rgb(0, 0, 0)
+}
+input[type="radio"]{
+    content:"";
+    width: 26px;
+    height: 26px;
+    float: left;
+    margin: 0.5em 0.5em 0 0  
+}
+label {
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+   
+}
+button.next-btn {
+    background-color: var(--primary-color);
+}
+
+button.restart-btn, button.submit-btn {
+    background-color: var(--secondary-color);
+}
+
+button:hover {
+    background-color: greenyellow;
+    color: #333;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Imágenes Interactivas */
+img.interactive-img {
+    width: 250X;
+    height: 500PX;
+    margin: 10%;
+    border-radius: var(--border-radius);
+    transition: transform var(--transition-duration) ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+img.interactive-img:hover {
+    transform: scale(0.9);
+}
+
+/* Campos de Texto */
+input[type="text"] {
+    padding: 14px;
+    width: calc(100% - 28px);
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* Popup */
+#popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--popup-background);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: var(--popup-content-background);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content p {
+    margin: 0;
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.popup-content button {
+    background-color: var(--primary-color);
+    padding: 12px 24px;
+    margin-top: 15px;
+    font-size: 16px;
+    border-radius: var(--border-radius);
+}
+.popup-content button:hover {
+    background-color: cornflowerblue;
+    font-family: "Poppins";
+}
+
