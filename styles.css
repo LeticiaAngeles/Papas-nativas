@@ -148,6 +148,7 @@ body {
     color: #818181;
     display:flex;
     flex-wrap: wrap;
+    text-align: center;
 }
 /* Diapositivas */
 .slide {
