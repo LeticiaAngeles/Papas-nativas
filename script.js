@@ -99,7 +99,7 @@ function checkQuestion3() {
         return;
     }
     if (answer.value === 'c') {
-        showPopup('¡Correcto!');
+        showPopup('¡Correcto');
         score++;
     } else {
         showPopup('Incorrecto. La respuesta correcta es: c) miles de años, siendo parte de nuestra historia y cultura.');
